@@ -14,9 +14,9 @@ def setup_vscode():
 
         cmd = [
             executable,
-            '--no-auth',
+            '--auth',
+            'none',
             '--disable-telemetry',
-            '--allow-http',
             '--port=' + str(port),
             working_dir
         ]

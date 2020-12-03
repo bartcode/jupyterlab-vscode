@@ -15,10 +15,7 @@ RUN cd /tmp/ && \
     npm run build && jupyter lab build
 
 # Download and install VS Code Server
-RUN cd && wget -q -O code-server.tar.gz https://github.com/cdr/code-server/releases/download/1.1156-vsc1.33.1/code-server1.1156-vsc1.33.1-linux-x64.tar.gz && \
-    mkdir -p ~/.local/bin && \
-    tar -xvf code-server.tar.gz -C ~/.local/bin --strip-components=1 && \
-    rm -rf code-server.tar.gz
+RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 # Install the VS code proxy
 ADD setup.py setup.py
